@@ -14,6 +14,12 @@ from .audit import (
     AuditLogger,
     ProvenanceTracker,
 )
+from .behavioral_access_control import (
+    PersuasionTactic,
+    TraitVector,
+    BACDecision,
+    BehavioralAccessControl,
+)
 
 __all__ = [
     "Permission",
@@ -25,4 +31,8 @@ __all__ = [
     "Provenance",
     "AuditLogger",
     "ProvenanceTracker",
+    "PersuasionTactic",
+    "TraitVector",
+    "BACDecision",
+    "BehavioralAccessControl",
 ]
