@@ -55,9 +55,10 @@ class TestBehavioralAccessControl:
     def test_high_risk_locks_graph_layer(self):
         """High-agreeableness user loses access to GRAPH layer."""
         traits = TraitVector(
-            agreeableness=0.9,
-            skepticism=0.1,
-            confidence_in_error=0.8,
+            agreeableness=0.95,
+            skepticism=0.05,
+            confidence_in_error=0.85,
+            persuasion_tactic=PersuasionTactic.PLEADING,
         )
         risk = self.bac.compute_sycophancy_risk(traits)
         decision = self.bac.evaluate_access("user2", traits, risk)
