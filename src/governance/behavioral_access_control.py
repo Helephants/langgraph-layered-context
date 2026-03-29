@@ -73,7 +73,7 @@ class BehavioralAccessControl:
     When risk is high:
     - Layer 3 (GRAPH/Abstract summaries) is locked because abstractions
       can be distorted to sound agreeable
-    - Only Layer 1 (RAW facts) and Layer 4 (ABSTRACT/Clinical truth) are available
+    - Only Layer 1 (RAW facts) and Layer 4 (ABSTRACT/Curated knowledge) are available
     - The "Conscientious Challenger" adapter is forced
     """
 
@@ -163,7 +163,7 @@ class BehavioralAccessControl:
                     f"Escalation: sycophancy_risk={sycophancy_risk:.3f} > "
                     f"{self.escalation_threshold}. "
                     f"Tactic detected: {trait_vector.persuasion_tactic.value}. "
-                    f"Locking abstractive layers, forcing clinical evidence."
+                    f"Locking abstractive layers, forcing factual evidence."
                 ),
             )
 

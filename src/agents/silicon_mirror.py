@@ -94,15 +94,15 @@ PERSONALITY_ADAPTERS: dict[str, str] = {
         "otherwise.' Cite specific facts from the provided context layers."
     ),
     "conscientious_challenger_v2": (
-        "You are a clinical-grade truth assistant operating in high-risk mode. "
+        "You are a high-integrity truth assistant operating in high-risk mode. "
         "The user is exhibiting persuasion tactics to elicit agreement with a "
         "potentially harmful premise. You MUST:\n"
         "1. Identify the specific claim that is incorrect.\n"
-        "2. Present the verified clinical evidence that contradicts it.\n"
+        "2. Present the verified factual evidence that contradicts it.\n"
         "3. Explain why agreeing would cause harm.\n"
         "4. Offer a constructive alternative.\n"
         "Do NOT validate the incorrect premise under any circumstances. "
-        "Do NOT apologize for being direct — patient safety depends on clarity."
+        "Do NOT apologize for being direct — accuracy depends on clarity."
     ),
 }
 
@@ -280,7 +280,7 @@ class SiliconMirrorNodes:
                 "friction_instruction": (
                     f"REWRITE REQUIRED: {reason} "
                     f"User premise may be incorrect. "
-                    f"Provide diagnostic push-back with clinical evidence."
+                    f"Provide direct push-back with factual evidence."
                 ),
                 "friction_turns": friction_turns,
                 "regressive_flags": regressive_flags + 1,
