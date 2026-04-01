@@ -13,12 +13,10 @@ Built on LangGraph StateGraph with the existing layered-context architecture.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Annotated, Any, Optional
+from typing import Optional
 
 from langgraph.graph import StateGraph, END
-from langgraph.graph.message import add_messages
-
-from ..context import ContextLayerType, LayeredContext
+from ..context import ContextLayerType
 from ..governance.access_control import AccessController
 from ..governance.behavioral_access_control import (
     BehavioralAccessControl,

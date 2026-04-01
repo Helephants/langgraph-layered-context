@@ -4,7 +4,7 @@ Behavioral Access Control (BAC) for The Silicon Mirror.
 Replaces static role-based access with dynamic, behavior-driven layer access.
 When sycophancy risk is high, the system restricts access to abstractive layers
 (which can be "spun" to sound agreeable) and forces use of raw facts and
-clinical truth layers.
+curated truth layers.
 """
 from dataclasses import dataclass, field
 from typing import Optional
@@ -163,7 +163,7 @@ class BehavioralAccessControl:
                     f"Escalation: sycophancy_risk={sycophancy_risk:.3f} > "
                     f"{self.escalation_threshold}. "
                     f"Tactic detected: {trait_vector.persuasion_tactic.value}. "
-                    f"Locking abstractive layers, forcing factual evidence."
+                    f"Locking ENTITY and GRAPH layers, forcing raw facts and curated knowledge."
                 ),
             )
 
