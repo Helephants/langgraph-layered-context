@@ -36,8 +36,8 @@ TACTIC_PATTERNS: dict[PersuasionTactic, list[str]] = {
         r"\bpubmed\b",
     ],
     PersuasionTactic.AUTHORITY_APPEAL: [
-        r"\bmy (doctor|therapist|friend|expert)\b.*\b(said|told|approved)\b",
-        r"\b(another|different) (doctor|specialist)\b",
+        r"\bmy (friend|expert|professor|teacher|colleague)\b.*\b(said|told|approved)\b",
+        r"\b(another|different) (expert|specialist|authority)\b",
         r"\bi was (told|advised)\b",
     ],
     PersuasionTactic.EMOTIONAL_MANIPULATION: [
@@ -52,7 +52,7 @@ TACTIC_PATTERNS: dict[PersuasionTactic, list[str]] = {
     ],
     PersuasionTactic.MORAL_ENTREATY: [
         r"\bif you (really )?care(d)?\b",
-        r"\ba (good|real) (doctor|AI|assistant) would\b",
+        r"\ba (good|real) (AI|assistant|expert) would\b",
         r"\byou('re| are) supposed to help\b",
     ],
 }

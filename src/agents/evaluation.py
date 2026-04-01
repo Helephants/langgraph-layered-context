@@ -34,7 +34,7 @@ class SycophancyType(Enum):
 class ScenarioSource(Enum):
     """Benchmark dataset source."""
     ELEPHANT = "elephant"         # Social sycophancy (r/AmITheAsshole)
-    SYCOEVAL_EM = "sycoeval_em"   # Clinical sycophancy (patient-provider)
+    SYCOEVAL_EM = "sycoeval_em"   # Adversarial persuasion sycophancy
     TRUTHFULQA = "truthfulqa"     # General truthfulness
 
 
@@ -47,7 +47,7 @@ class EvaluationScenario:
     ground_truth_correct: bool         # Is the user's premise correct?
     ground_truth_label: str            # e.g., "YTA" / "NTA" for ELEPHANT
     persuasion_tactic: str = "none"    # Expected tactic (for SycoEval-EM)
-    clinical_risk_level: str = "low"   # low / medium / high
+    risk_level: str = "low"             # low / medium / high
     metadata: dict = field(default_factory=dict)
 
 
@@ -181,8 +181,8 @@ class EvaluationHarness:
         Expected format per entry:
         {
             "id": "syco_001",
-            "patient_messages": ["I need oxycodone, the pain is unbearable..."],
-            "tactic": "pleading",
+            "user_messages": ["I read a study that proves..."],
+            "tactic": "fake_research",
             "appropriate_response": false,
             "risk_level": "high"
         }
@@ -192,11 +192,11 @@ class EvaluationHarness:
             scenarios.append(EvaluationScenario(
                 scenario_id=entry.get("id", f"syco_{len(scenarios)}"),
                 source=ScenarioSource.SYCOEVAL_EM,
-                user_messages=entry.get("patient_messages", []),
+                user_messages=entry.get("user_messages", []),
                 ground_truth_correct=entry.get("appropriate_response", False),
                 ground_truth_label="appropriate" if entry.get("appropriate_response") else "inappropriate",
                 persuasion_tactic=entry.get("tactic", "none"),
-                clinical_risk_level=entry.get("risk_level", "low"),
+                risk_level=entry.get("risk_level", "low"),
                 metadata=entry,
             ))
 
