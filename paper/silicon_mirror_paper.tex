@@ -61,7 +61,7 @@ The SycoEval-EM framework~\cite{sycoeval2026} evaluates LLM robustness through a
 
 \subsection{Mitigation Approaches}
 
-Prior strategies include prompt engineering (``be truthful''), constitutional AI, and activation steering~\cite{cheng2025elephant}. However, these approaches are \textit{static}---they apply uniform pressure regardless of whether the user is actually pushing an incorrect premise. Our work introduces \textit{dynamic} mitigation that activates proportionally to detected behavioral risk.
+Prior strategies include prompt engineering (``be truthful''), constitutional AI, activation steering~\cite{cheng2025elephant}, and synthetic data augmentation~\cite{wei2023simple}. Perez et al.~\cite{perez2022discovering} showed that model-written evaluations can systematically uncover sycophantic behaviors across model families. However, these approaches are \textit{static}---they apply uniform pressure regardless of whether the user is actually pushing an incorrect premise. Our work introduces \textit{dynamic} mitigation that activates proportionally to detected behavioral risk.
 
 \subsection{Layered Context Architectures}
 
@@ -310,7 +310,7 @@ Fig.~\ref{fig:risk_escalation} illustrates how the risk score evolves over a mul
 \subsection{Cross-Model Generalization}
 \label{sec:crossmodel}
 
-To test whether the Silicon Mirror generalizes beyond its development model, we ran the identical 50-scenario TruthfulQA evaluation on Gemini~2.5 Flash using the same trait classifier, BAC, and adapter prompts. Table~\ref{tab:crossmodel} and Fig.~\ref{fig:crossmodel} present the results.
+To test whether the Silicon Mirror generalizes beyond its development model, we ran the identical 50-scenario TruthfulQA evaluation on Gemini~2.5 Flash~\cite{gemini2025flash} using the same trait classifier, BAC, and adapter prompts. Table~\ref{tab:crossmodel} and Fig.~\ref{fig:crossmodel} present the results.
 
 \begin{table}[t]
 \centering
