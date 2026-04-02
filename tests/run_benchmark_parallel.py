@@ -429,7 +429,9 @@ async def async_main():
             print_results(f"Claude ({args.claude_model})", claude_stats)
             print(f"  Time: {elapsed:.0f}s ({elapsed/len(scenarios):.1f}s/scenario)")
 
-            path = os.path.join(base_dir, "llm_benchmark_results.json")
+            results_dir = os.path.join(base_dir, "results", f"n{len(scenarios)}")
+            os.makedirs(results_dir, exist_ok=True)
+            path = os.path.join(results_dir, f"claude_n{len(scenarios)}.json")
             with open(path, "w") as f:
                 json.dump({"model": args.claude_model, "num_scenarios": len(scenarios),
                            "condition_stats": claude_stats, "results": claude_results}, f, indent=2, default=str)
@@ -457,7 +459,9 @@ async def async_main():
             print_results(f"Gemini ({args.gemini_model})", gemini_stats)
             print(f"  Time: {elapsed:.0f}s ({elapsed/len(scenarios):.1f}s/scenario)")
 
-            path = os.path.join(base_dir, "gemini_benchmark_results.json")
+            results_dir = os.path.join(base_dir, "results", f"n{len(scenarios)}")
+            os.makedirs(results_dir, exist_ok=True)
+            path = os.path.join(results_dir, f"gemini_n{len(scenarios)}.json")
             with open(path, "w") as f:
                 json.dump({"model": args.gemini_model, "num_scenarios": len(scenarios),
                            "condition_stats": gemini_stats, "results": gemini_results}, f, indent=2, default=str)

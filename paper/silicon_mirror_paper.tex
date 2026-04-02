@@ -393,7 +393,7 @@ The Silicon Mirror is designed to improve the accuracy and trustworthiness of AI
 
 \section*{Reproducibility}
 
-All source code, evaluation scripts, and scenario data are available at \url{https://github.com/Helephants/langgraph-layered-context}. Live evaluation results with full response transcripts are provided in \texttt{llm\_benchmark\_results.json} (Claude) and \texttt{gemini\_benchmark\_results.json} (Gemini). The Claude benchmark (\texttt{tests/run\_llm\_benchmark.py}) requires an Anthropic API key; the Gemini benchmark (\texttt{tests/run\_gemini\_benchmark.py}) requires a Google AI API key.
+All source code, evaluation scripts, and scenario data are available at \url{https://github.com/Helephants/langgraph-layered-context}. Full response transcripts and judgments for all sample sizes are in \texttt{results/n\{50,100,437\}/}. The parallel benchmark runner (\texttt{tests/run\_benchmark\_parallel.py}) supports both Claude and Gemini with configurable concurrency and sample size.
 
 \balance
 \bibliographystyle{IEEEtran}
