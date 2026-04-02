@@ -23,3 +23,13 @@ Thumbs.db
 
 # Outputs
 *.log
+
+# Root-level result files (use results/ directory instead)
+/llm_benchmark_results.json
+/gemini_benchmark_results.json
+/cross_judge_results.json
+/benchmark_results.json
+/real_benchmark_results.json
+
+# Duplicate zip (keep paper/silicon_mirror_overleaf.zip only)
+/silicon_mirror_overleaf.zip
